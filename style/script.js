@@ -29,12 +29,12 @@ function waitForUserInteraction(second = 5) {
   const playOnInteraction = () => {
     audio.currentTime = second;
     audio.play().catch(() => {});
-    document.removeEventListener('click', playOnInteraction);
-    document.removeEventListener('touchstart', playOnInteraction);
+    canvas.removeEventListener('click', playOnInteraction);
+    canvas.removeEventListener('touchstart', playOnInteraction);
   };
 
-  document.addEventListener('click', playOnInteraction);
-  document.addEventListener('touchstart', playOnInteraction);
+  canvas.addEventListener('click', playOnInteraction);
+  canvas.addEventListener('touchstart', playOnInteraction);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
